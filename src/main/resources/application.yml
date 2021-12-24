@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/erickvieira-ppcc/dev.erickvieira.ppcc.config
+          clone-on-start: true
+          refresh-rate: 30
+  security:
+    user:
+      name: ppcc
+      password: ppcc
+  profiles:
+    active: ${PROFILE:development}
